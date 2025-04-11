@@ -29,17 +29,17 @@ class ChatState(StatesGroup):
 
 @dp.message(Command("/start"))
 async def start_handler(message: types.Message, state: FSMContext):
-    await message.answer("👋 Hi! I’m your Gemini-powered AI Assistant.\nAsk me anything!")
+    await message.answer("Hi! I’m your Gemini-powered AI Assistant.\nAsk me anything!")
 
 @dp.message(Command("/about"))
 async def about_handler(message: types.Message):
-    await message.answer("🤖 I'm an AI bot using Google Gemini + Aiogram 3.0.\nBuilt by Pardhesh 😎.")
+    await message.answer("I'm an AI bot using Google Gemini + Aiogram 3.0.\nBuilt by Pardhesh.")
     
     
 @dp.message(Command("/clear"))
 async def clear_handler(message: types.Message, state: FSMContext):
     await state.clear()
-    await message.answer("🧹 Memory cleared!")
+    await message.answer("Memory cleared!")
 
 @dp.message()
 async def chat_handler(message: types.Message, state: FSMContext):
